@@ -29,6 +29,8 @@
 		3DC2CFA120723413008F20D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DC2CFA320723413008F20D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DC2CFA420723413008F20D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3DC2CFAB20723D15008F20D5 /* UNNotificationSoundPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNNotificationSoundPrivate.h; sourceTree = "<group>"; };
+		3DC2CFAC20723D15008F20D5 /* TLAlertTone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAlertTone.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		3DC2CF9120723413008F20D5 /* iToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				3DC2CFAD20723D31008F20D5 /* Runtime Headers */,
 				3DC2CF9220723413008F20D5 /* AppDelegate.h */,
 				3DC2CF9320723413008F20D5 /* AppDelegate.m */,
 				3DC2CF9520723413008F20D5 /* FirstViewController.h */,
@@ -74,6 +77,15 @@
 				3DC2CFA420723413008F20D5 /* main.m */,
 			);
 			path = iToolkit;
+			sourceTree = "<group>";
+		};
+		3DC2CFAD20723D31008F20D5 /* Runtime Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3DC2CFAC20723D15008F20D5 /* TLAlertTone.h */,
+				3DC2CFAB20723D15008F20D5 /* UNNotificationSoundPrivate.h */,
+			);
+			path = "Runtime Headers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
