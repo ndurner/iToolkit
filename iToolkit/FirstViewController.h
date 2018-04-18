@@ -10,6 +10,14 @@
 
 @interface FirstViewController : UIViewController
 
++ (FirstViewController *) instance;
+- (void) updateUI;
+
+- (IBAction)setAlarm:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *nextAlarmField;
+@property (weak, nonatomic) IBOutlet UISwitch *onlyWeekdays;
+@property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 
 @end
 

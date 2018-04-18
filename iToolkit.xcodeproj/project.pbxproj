@@ -14,6 +14,7 @@
 		3DC2CF9F20723413008F20D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2CF9E20723413008F20D5 /* Assets.xcassets */; };
 		3DC2CFA220723413008F20D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2CFA020723413008F20D5 /* LaunchScreen.storyboard */; };
 		3DC2CFA520723413008F20D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2CFA420723413008F20D5 /* main.m */; };
+		3DC2CFB320725B57008F20D5 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2CFB220725B57008F20D5 /* Alarm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		3DC2CFA420723413008F20D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3DC2CFAB20723D15008F20D5 /* UNNotificationSoundPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNNotificationSoundPrivate.h; sourceTree = "<group>"; };
 		3DC2CFAC20723D15008F20D5 /* TLAlertTone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAlertTone.h; sourceTree = "<group>"; };
+		3DC2CFB120725B57008F20D5 /* Alarm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		3DC2CFB220725B57008F20D5 /* Alarm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				3DC2CFAD20723D31008F20D5 /* Runtime Headers */,
+				3DC2CFB120725B57008F20D5 /* Alarm.h */,
+				3DC2CFB220725B57008F20D5 /* Alarm.m */,
 				3DC2CF9220723413008F20D5 /* AppDelegate.h */,
 				3DC2CF9320723413008F20D5 /* AppDelegate.m */,
 				3DC2CF9520723413008F20D5 /* FirstViewController.h */,
@@ -162,6 +167,7 @@
 				3DC2CF9A20723413008F20D5 /* SecondViewController.m in Sources */,
 				3DC2CF9420723413008F20D5 /* AppDelegate.m in Sources */,
 				3DC2CFA520723413008F20D5 /* main.m in Sources */,
+				3DC2CFB320725B57008F20D5 /* Alarm.m in Sources */,
 				3DC2CF9720723413008F20D5 /* FirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FSYXWNUDDW;
 				INFOPLIST_FILE = iToolkit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.ndurner.iToolkit;
@@ -310,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FSYXWNUDDW;
 				INFOPLIST_FILE = iToolkit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.ndurner.iToolkit;
