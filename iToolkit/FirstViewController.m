@@ -69,6 +69,12 @@ static FirstViewController *this;
             return;
         }
         
+        // enable notification callbacks
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [center setDelegate: (NSObject<UNUserNotificationCenterDelegate> *) [UIApplication sharedApplication].delegate];
+        });
+        
+        // set up notifications
         [Alarm
             setAlarmWithTime:
                 [[NSCalendar currentCalendar]

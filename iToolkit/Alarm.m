@@ -19,10 +19,14 @@ NSString *  const kAlarmMinPref = @"AlarmMinPreferenceId";
 NSString * const kWeekdayOnlyPref = @"WeekdayOnlyPreferenceId";
 
 + (void) handleNotification: (NSString *) notificationId {
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center removeAllDeliveredNotifications];
+    
     if ([notificationId hasPrefix:kNotificationId]) {
         // remove corresponding Alarm
-        NSString *eventId = [notificationId substringFromIndex:[kNotificationId length] - 1];
-        [[UNUserNotificationCenter currentNotificationCenter] removePendingNotificationRequestsWithIdentifiers: @[[kAlarmId stringByAppendingString:eventId]]];
+        NSString *eventId = [notificationId substringFromIndex:[kNotificationId length]];
+        
+        [center removePendingNotificationRequestsWithIdentifiers: @[[kAlarmId stringByAppendingString:eventId]]];
     }
     else {
         // nothing to do for actual Alarms
@@ -117,7 +121,7 @@ NSString * const kWeekdayOnlyPref = @"WeekdayOnlyPreferenceId";
         cnt.sound = [UNNotificationSound defaultSound];
         [cnt.sound setValue:@YES forKey:@"_shouldIgnoreRingerSwitch"];
         
-        trig = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmSpec repeats:TRUE];
+        trig = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmTime repeats:TRUE];
         
         NSString *alarmId = [kAlarmId stringByAppendingFormat:@"%li", alarmTime.weekday];
         req = [UNNotificationRequest requestWithIdentifier:alarmId content:cnt trigger:trig];
