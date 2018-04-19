@@ -101,7 +101,8 @@ NSString * const kWeekdayOnlyPref = @"WeekdayOnlyPreferenceId";
         
         UNCalendarNotificationTrigger *trig = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:notifyTime repeats:TRUE];
         
-        UNNotificationRequest *req = [UNNotificationRequest requestWithIdentifier:kNotificationId content:cnt trigger:trig];
+        NSString *notiId = [kNotificationId stringByAppendingFormat:@"%li", alarmTime.weekday];
+        UNNotificationRequest *req = [UNNotificationRequest requestWithIdentifier:notiId content:cnt trigger:trig];
         [center addNotificationRequest:req withCompletionHandler:^(NSError * _Nullable error) {
             if (error != nil) {
                 NSLog(@"error adding alarm notification: %@", error);
@@ -117,7 +118,9 @@ NSString * const kWeekdayOnlyPref = @"WeekdayOnlyPreferenceId";
         [cnt.sound setValue:@YES forKey:@"_shouldIgnoreRingerSwitch"];
         
         trig = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmSpec repeats:TRUE];
-        req = [UNNotificationRequest requestWithIdentifier:kAlarmId content:cnt trigger:trig];
+        
+        NSString *alarmId = [kAlarmId stringByAppendingFormat:@"%li", alarmTime.weekday];
+        req = [UNNotificationRequest requestWithIdentifier:alarmId content:cnt trigger:trig];
         [center addNotificationRequest:req withCompletionHandler:^(NSError * _Nullable error) {
             if (error != nil) {
                 NSLog(@"error adding actual alarm: %@", error);
