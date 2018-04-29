@@ -13,5 +13,6 @@
 + (void) nextEventWithCompletionHandler: (void (^) (NSDate *nextEvent)) completion;
 + (void) setAlarmWithTime:(NSDateComponents *)t weekdaysOnly:(BOOL) weekdaysOnly exceptDay: (NSNumber *) exceptDay;
 + (void) handleNotification: (NSString *) notificationId;
++ (void) skipNextWithCompletionHandler: (void (^) (void)) completion;
 
 @end

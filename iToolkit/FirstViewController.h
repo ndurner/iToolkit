@@ -14,6 +14,7 @@
 - (void) updateUI;
 
 - (IBAction)setAlarm:(id)sender;
+- (IBAction)skip:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *nextAlarmField;
 @property (weak, nonatomic) IBOutlet UISwitch *onlyWeekdays;

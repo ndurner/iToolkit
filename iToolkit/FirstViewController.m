@@ -27,7 +27,10 @@ static FirstViewController *this;
 - (void) updateUI {
     [Alarm nextEventWithCompletionHandler:^(NSDate *nextEvent) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            _nextAlarmField.text = [nextEvent description];
+            NSString *display = [nextEvent description];
+            if (display == nil)
+                display = @"(disabled)";
+            _nextAlarmField.text = display;
         });
     }];
 }
@@ -82,6 +85,12 @@ static FirstViewController *this;
                     fromDate:pickerDate]
             weekdaysOnly:onlyWeekdays exceptDay:nil];
         
+        [self updateUI];
+    }];
+}
+
+- (IBAction)skip:(id)sender {
+    [Alarm skipNextWithCompletionHandler:^{
         [self updateUI];
     }];
 }

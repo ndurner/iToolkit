@@ -148,4 +148,18 @@ NSString * const kWeekdayOnlyPref = @"WeekdayOnlyPreferenceId";
     [self rescheduleAlarmsExceptForDay:nil];
 }
 
++ (void) skipNextWithCompletionHandler: (void (^) (void)) completion {
+    [self nextEventWithCompletionHandler:^(NSDate *nextEvent) {
+        NSInteger day = [[NSCalendar currentCalendar] component:NSCalendarUnitWeekday fromDate:nextEvent];
+        
+        NSString *alarmId = [kAlarmId stringByAppendingFormat:@"%li", day];
+        NSString *notifyId = [kNotificationId stringByAppendingFormat:@"%li", day];
+        
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center removePendingNotificationRequestsWithIdentifiers:[NSArray arrayWithObjects:alarmId, notifyId, nil]];
+        
+        completion();
+    }];
+}
+
 @end
