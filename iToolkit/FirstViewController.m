@@ -27,7 +27,12 @@ static FirstViewController *this;
 - (void) updateUI {
     [Alarm nextEventWithCompletionHandler:^(NSDate *nextEvent) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *display = [nextEvent description];
+            NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+            fmt.locale = [NSLocale currentLocale];
+            fmt.dateStyle = NSDateFormatterMediumStyle;
+            fmt.timeStyle = NSDateFormatterMediumStyle;
+            
+            NSString *display = [fmt stringFromDate:nextEvent];
             if (display == nil)
                 display = @"(disabled)";
             _nextAlarmField.text = display;
